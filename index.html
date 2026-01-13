@@ -355,7 +355,11 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
 
 /* ===== DATA ===== */
 const grammarData = {
-  "MĐQH": "MĐQH-MĐQH rút gọn",
+  "MĐQH": "Phần lý thuyết",
+  "Liên từ, Adv nối": "Phần lý thuyết",
+  "Rút gọn MĐ Trạng ngữ": "Phần lý thuyết",
+
+
 };
 
 
@@ -363,6 +367,9 @@ const grammarData = {
 
 const driveLinks = {
   "MĐQH": "https://docs.google.com/document/d/1c3aJf7_Gioxha_NpwOJW5d8Crfo07V5y/preview",
+  "Liên từ, Adv nối": "https://docs.google.com/document/d/1AD02lk3BPPMm_BL2TP06ENhu_FdJWKkB/preview",
+  "Rút gọn MĐ Trạng ngữ": "https://docs.google.com/document/d/1Qn0DOdEIg7eiyRnXGSHZLe3LTsxN1g_T/preview",
+
 };
 
 
@@ -383,6 +390,30 @@ const exercises = {
   {q: "The person to _____ you should send the application is the HR Manager.", a: "whom"},
   {q: "Electric cars, _____ produce zero tailpipe emissions, are key to cleaner air.", a: "which"}
   ],
+  "Liên từ, Adv nối":[
+  {q: "______ digital technology has advanced, many remote areas still lack internet access.", a: "While"},
+  {q: "The experiment failed; ______, the data collected provided valuable insights.", a: "nevertheless"},
+  {q: "Students must submit their assignments by Friday, ______ they will face a grade penalty.", a: "otherwise"},
+  {q: "______ the high cost of tuition, many students apply for international scholarships.", a: "Despite"},
+  {q: "The city's infrastructure is aging; ______, the population is growing rapidly.", a: "furthermore"},
+  {q: "______ the results were inconclusive, the researchers decided to repeat the trial.", a: "Since"},
+  {q: "The theory is widely accepted ______ there is little empirical evidence to support it.", a: "even though"},
+  {q: "Organic farming avoids synthetic pesticides; ______, it is often more labor-intensive.", a: "consequently"},
+  {q: "The university offers a wide range of courses ______ students can explore various fields.", a: "so that"},
+  {q: "______ global temperatures rise, polar ice caps continue to melt at an alarming rate.", a: "As"}
+ ],
+  "Rút gọn MĐ Trạng ngữ":[
+  {q: "______ (conduct) the experiment multiple times, the researchers finally achieved consistent results.", a: "Having conducted"},
+  {q: "When ______ (face) with the choice of two careers, she decided to pursue environmental science.", a: "faced"},
+  {q: "______ (Concern) by the lack of prior research, the professor decided to start a new pilot study.", a: "Concerned"},
+  {q: "While ______ (analyse) the data, the software identified several significant anomalies.", a: "analysing"},
+  {q: "______ (Recognise) as a pioneer in her field, Dr. Miller was invited to speak at the global summit.", a: "Recognised"},
+  {q: "After ______ (complete) the literature review, the student began writing the first chapter.", a: "completing"},
+  {q: "Although ______ (reject) by many critics at first, the new theory eventually gained widespread support.", a: "rejected"},
+  {q: "______ (Come) from a reputable source, the information was deemed reliable for the thesis.", a: "Coming"},
+  {q: "Once ______ (introduce) to the public, the government's new education policy sparked intense debate.", a: "introduced"},
+  {q: "______ (Understand) the potential risks involved, the team took extra precautions during the trial.", a: "Understanding"},
+ ],
 
 
 
@@ -403,11 +434,10 @@ const dataByTopic = {
     full: "Students studying abroad often develop greater independence and adaptability."
   },
   {
-    vn: "Các chính sách giáo dục do chính phủ thực hiện nhằm đảm bảo cơ hội bình đẳng cho mọi người.",
+    vn: "Các chính sách giáo dục được thực hiện bởi chính phủ nhằm đảm bảo cơ hội bình đẳng cho mọi người.",
     parts: [
       {en: "Education policies", vn: "chính sách giáo dục", color: "green"},
-      {en: "implemented by", vn: "thực hiện bởi", color: "blue"},
-      {en: "ensure", vn: "đảm bảo", color: "orange"},
+      {en: "implement", vn: "thực hiện", color: "blue"},
       {en: "equal opportunities", vn: "cơ hội bình đẳng", color: "purple"}
     ],
     full: "Education policies implemented by the government aim to ensure equal opportunities for all."
@@ -417,16 +447,14 @@ const dataByTopic = {
     parts: [
       {en: "evolving", vn: "đang phát triển", color: "green"},
       {en: "rapid pace", vn: "tốc độ nhanh", color: "blue"},
-      {en: "transformed", vn: "thay đổi hoàn toàn", color: "orange"},
-      {en: "communicate", vn: "giao tiếp", color: "purple"}
+      {en: "transform", vn: "thay đổi hoàn toàn", color: "orange"},
     ],
     full: "Technology, evolving at a rapid pace, has transformed the way we communicate."
   },
   {
     vn: "Các công ty cung cấp giờ làm việc linh hoạt có thể cải thiện sự hài lòng của nhân viên.",
     parts: [
-      {en: "flexible working hours", vn: "giờ làm việc linh hoạt", color: "green"},
-      {en: "improve", vn: "cải thiện", color: "blue"},
+      {en: "working hours", vn: "giờ làm việc", color: "green"},
       {en: "employee satisfaction", vn: "sự hài lòng của nhân viên", color: "orange"}
     ],
     full: "Companies providing flexible working hours can improve employee satisfaction."
@@ -434,19 +462,174 @@ const dataByTopic = {
   {
     vn: "Học sinh, đang đối mặt với áp lực ngày càng tăng từ các kỳ thi, cần được hỗ trợ sức khỏe tâm thần tốt hơn.",
     parts: [
-      {en: "facing", vn: "đối mặt với", color: "green"},
+      {en: "face", vn: "đối mặt", color: "green"},
       {en: "increasing pressure", vn: "áp lực ngày càng tăng", color: "blue"},
       {en: "mental health", vn: "sức khỏe tâm thần", color: "orange"},
-      {en: "support", vn: "hỗ trợ", color: "purple"}
     ],
     full: "Students, facing increasing pressure from exams, need better mental health support."
   },
-
-
   ],
 
+  "Liên từ, Adv nối":[
+  {
+    vn: "Trong khi nhiều quốc gia đầu tư mạnh vào năng lượng tái tạo, các nước khác vẫn dựa vào nhiên liệu hóa thạch.",
+    parts: [
+      {en: "renewable energy", vn: "năng lượng tái tạo", color: "orange"},
+      {en: "fossil fuels", vn: "nhiên liệu hóa thạch", color: "purple"}
+    ],
+    full: "While many countries invest heavily in renewable energy, others still rely on fossil fuels."
+  },
+  {
+    vn: "Một số học sinh thích học tập trực tuyến, ngược lại, những học sinh khác thích các lớp học trực tiếp.",
+    parts: [
+      {en: "online learning", vn: "học tập trực tuyến", color: "blue"},
+      {en: "face-to-face classes", vn: "các lớp trực tiếp", color: "orange"}
+    ],
+    full: "Some students prefer online learning, whereas others enjoy face-to-face classes."
+  },
+  {
+    vn: "Vì chính phủ đã tăng ngân sách cho y tế công cộng, kết quả sức khỏe của người dân đã được cải thiện.",
+    parts: [
+      {en: "public healthcare", vn: "y tế công cộng", color: "orange"},
+      {en: "health outcomes", vn: "kết quả sức khỏe", color: "purple"}
+    ],
+    full: "Since governments have increased funding for public healthcare, citizens’ health outcomes have improved."
+  },
+  {
+    vn: "Mặc dù công nghệ đã làm cho việc giao tiếp trở nên dễ dàng hơn, nhưng nó cũng gây ra những lo ngại về quyền riêng tư.",
+    parts: [
+      {en: "simplify", vn: "làm cho đơn giản hơn", color: "blue"},
+      {en: "privacy concerns", vn: "lo ngại quyền riêng tư", color: "orange"}
+    ],
+    full: "Although technology has simplified communication, it has also caused privacy concerns."
+  },
+  {
+    vn: "Nhiều thành phố đã triển khai các chương trình chia sẻ xe đạp bởi vì việc đạp xe giúp giảm tắc nghẽn giao thông.",
+    parts: [
+      {en: "implement", vn: "triển khai", color: "blue"},
+      {en: "bike-sharing schemes", vn: "chương trình chia sẻ xe đạp", color: "orange"},
+      {en: "traffic congestion", vn: "tắc nghẽn giao thông", color: "purple"}
+    ],
+    full: "Many cities have implemented bike-sharing schemes because cycling reduces traffic congestion."
+  },
+  {
+    vn: "Nhiều quốc gia phải đối mặt với những thách thức kinh tế; tuy nhiên, họ vẫn tiếp tục đầu tư vào giáo dục.",
+    parts: [
+      {en: "economic challenges", vn: "những thách thức kinh tế", color: "blue"},
+      {en: "invest in", vn: "đầu tư vào", color: "orange"}
+    ],
+    full: "Many countries face economic challenges; nevertheless, they continue to invest in education."
+  },
+  {
+    vn: "Chính phủ đã giảm thuế đối với năng lượng tái tạo; do đó, nhiều hộ gia đình có thể mua các tấm pin mặt trời.",
+    parts: [
+      {en: "renewable energy", vn: "năng lượng tái tạo", color: "blue"},
+      {en: "solar panels", vn: "các tấm pin mặt trời", color: "orange"}
+    ],
+    full: "The government has reduced taxes on renewable energy; therefore, more households can afford solar panels."
+  },
+  {
+    vn: "Dự án rất tốn kém; tuy nhiên, nó đã cải thiện đáng kể dịch vụ y tế công cộng.",
+    parts: [
+      {en: "public health services", vn: "dịch vụ y tế công cộng", color: "blue"},
+    ],
+    full: "The project was expensive; however, it significantly improved public health services."
+  },
+  {
+    vn: "Giao thông công cộng tiện lợi; hơn nữa, nó giúp giảm tắc nghẽn giao thông và ô nhiễm.",
+    parts: [
+      {en: "Public transportation", vn: "Giao thông công cộng", color: "blue"},
+      {en: "traffic congestion", vn: "tắc nghẽn giao thông", color: "orange"}
+    ],
+    full: "Public transportation is convenient; moreover, it reduces traffic congestion and pollution."
+  },
+  {
+    vn: "Thành phố đang phải đối mặt với ô nhiễm không khí nghiêm trọng; thêm vào đó, mức độ tiếng ồn cũng tăng mạnh.",
+    parts: [
+      {en: "air pollution", vn: "ô nhiễm không khí", color: "blue"},
+    ],
+    full: "The city faces severe air pollution; in addition, noise levels have increased dramatically."
+  },
+  ],
 
-
+  "Rút gọn MĐ Trạng ngữ":[
+  {
+    vn: "Sau khi hoàn thành khảo sát, học sinh phân tích kết quả.",
+    parts: [
+      {en: "analyse", vn: "phân tích", color: "orange"},
+    ],
+    full: "Having completed the survey, students analyzed the results."
+  },
+  {
+    vn: "Tăng ngân sách, chính phủ đã cải thiện hệ thống y tế công cộng.",
+    parts: [
+      {en: "public healthcare", vn: "y tế công cộng", color: "orange"}
+    ],
+    full: "Increasing funding, the government has improved public healthcare."
+  },
+  {
+    vn: "Thu thập dữ liệu, các nhà nghiên cứu nhận thấy một số mẫu hình.",
+    parts: [
+      {en: "patterns", vn: "mẫu hình", color: "purple"}
+    ],
+    full: "Collecting the data, researchers noticed several patterns."
+  },
+  {
+    vn: "Đã tiến hành nghiên cứu kỹ lưỡng, công ty triển khai chương trình.",
+    parts: [
+      {en: "extensive research", vn: "nghiên cứu kỹ lưỡng", color: "blue"},
+      {en: "launch", vn: "triển khai/ra mắt", color: "orange"}
+    ],
+    full: "Having conducted extensive research, the company launched the program."
+  },
+  {
+    vn: "Tham gia hội thảo, học sinh học được các kỹ năng giải quyết vấn đề mới.",
+    parts: [
+      {en: "workshop", vn: "hội thảo", color: "blue"},
+      {en: "problem-solving", vn: "giải quyết vấn đề", color: "orange"},
+    ],
+    full: "Attending the workshop, students learned new problem-solving skills."
+  },
+  {
+    vn: "Cập nhật chương trình học, trường đại học giúp sinh viên có được các kỹ năng thực tiễn.",
+    parts: [
+      {en: "curriculum", vn: "chương trình học", color: "blue"},
+      {en: "practical skills", vn: "kỹ năng thực tiễn", color: "purple"}
+    ],
+    full: "Updating its curriculum, the university helped students gain practical skills."
+  },
+  {
+    vn: "Sau khi xem xét các báo cáo, các nhà nghiên cứu công bố kết quả nghiên cứu.",
+    parts: [
+      {en: "publish", vn: "công bố", color: "orange"},
+      {en: "findings", vn: "kết quả nghiên cứu", color: "purple"}
+    ],
+    full: "Having reviewed the reports, researchers published their findings."
+  },
+  {
+    vn: "Thực hiện các chính sách môi trường, chính phủ giảm mức độ ô nhiễm.",
+    parts: [
+      {en: "environmental policies", vn: "chính sách môi trường", color: "blue"},
+      {en: "pollution levels", vn: "mức độ ô nhiễm", color: "purple"}
+    ],
+    full: "Implementing environmental policies, governments decreased pollution levels."
+  },
+  {
+    vn: "Luyện tập viết luận đều đặn, học sinh cải thiện hiệu quả học tập.",
+    parts: [
+      {en: "academic performance", vn: "hiệu quả/kết quả học tập", color: "purple"}
+    ],
+    full: "Practicing writing essays regularly, students improved their academic performance."
+  },
+  {
+    vn: "Áp dụng công nghệ mới, các công ty tăng năng suất.",
+    parts: [
+      {en: "Adopt", vn: "Áp dụng", color: "green"},
+      {en: "productivity", vn: "năng suất", color: "purple"}
+    ],
+    full: "Adopting new technologies, companies increased productivity."
+  },
+],
 
 
 };
