@@ -22,18 +22,20 @@ header {
   font-weight: bold;
   color: #7a4e3e;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;       
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;  /* Left luôn bên trái, center căn giữa */
   gap: 15px;
 }
 
+/* Left: icon + home text */
 .header-left {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 0 0 auto;
+  flex: 0 0 auto;          /* không bị co lại */
 }
+
 .header-left a {
   display: flex;
   align-items: center;
@@ -42,7 +44,15 @@ header {
   color: #7a4e3e;
   text-decoration: none;
 }
-.header-left a i { font-size: 28px; }
+
+.header-left a i {
+  font-size: 28px;
+}
+/* Center title */
+header {
+  position: relative;
+}
+
 .header-center {
   position: absolute;
   left: 50%;
@@ -122,8 +132,36 @@ select {
   margin: 20px auto;
   width: 70%;
 }
-.input-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; justify-content: center;}
-.input-row input { padding: 6px; width: 400px; font-size: 22px; border: 1px solid #ccc; border-radius: 4px; }
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  justify-content: flex-start; /* vẫn căn lề trái */
+  flex-wrap: wrap;
+  margin-left: 140px; /* dịch vào từ lề trái */
+}
+
+.input-row input {
+  padding: 6px;
+  width: 300px; /* cố định chiều rộng */
+  font-size: 22px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-shrink: 0; /* không bị co lại */
+}
+
+.input-row button {
+  width: 100px; /* cố định button */
+  padding: 6px 10px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.input-row .result {
+  min-width: 120px; /* khung hiển thị kết quả cố định */
+  display: inline-block;
+}
 .arrow-icon { font-size: 18px; font-weight: bold; }
 .correct { color: green; font-weight: bold; font-size: 18px; }
 .wrong { color: red; font-weight: bold; font-size: 18px; }
@@ -140,9 +178,38 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
 @keyframes pop { 0%{transform:translate(0,0) scale(1);opacity:1;}50%{transform:translate(calc(var(--x)*0.5),calc(var(--y)*0.4)) scale(1.1);opacity:1;}100%{transform:translate(var(--x),var(--y)) scale(0.5);opacity:0;} }
 
 @media(max-width:480px){
+   .header-center {
+    flex-basis: 100%;
+    order: 2;
+    text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+}
+
+  header {
+    padding: 10px 15px;
+  }
+  .header-left a {
+    font-size: 18px;
+  }
+  .header-left a i {
+    font-size: 20px;
+  }
+  .header-center {
+    font-size: 22px;
+  }
+}
+
+
+
   body{margin:10px;padding:10px;}
   .sentence-box{font-size:18px;width:90%;}
-  .input-row input{width:100%;font-size:16px;}
   .full-answer-box{width:100%;font-size:16px;height:80px;}
   button{width:140px;font-size:14px;margin-bottom:5px;}
 }
@@ -190,20 +257,46 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
 <div class="signature">Lớp Anh thầy Kết</div>
 
 <script>
+
+
+
+
 /* ===== DATA ===== */
 const grammarData = {
   "MĐQH": "MĐQH-MĐQH rút gọn",
 };
 
+
+
+
 const driveLinks = {
   "MĐQH": "https://docs.google.com/document/d/1c3aJf7_Gioxha_NpwOJW5d8Crfo07V5y/preview",
 };
 
+
+
+
+
+
 const exercises = {
   "MĐQH":[
-    {q:"I ___ (eat) breakfast every morning.", a:"eat"},
-    {q:"They ___ (play) football right now.", a:"are playing"}
+  {q: "The scientist _____ won the Nobel Prize is giving a lecture today.", a: "who"},
+  {q: "The house _____ roof was damaged in the storm has been repaired.", a: "whose"},
+  {q: "The candidates _____ we interviewed yesterday were all very well-qualified.", a: ["who", "whom"]},
+  {q: "Sustainable energy, _____ is becoming more affordable, helps reduce carbon emissions.", a: "which"},
+  {q: "I am looking for a colleague _____ specializes in environmental law.", a: "who"},
+  {q: "The city _____ I grew up in has changed significantly over the last decade.", a: "which"},
+  {q: "Students _____ assignments are submitted late will lose 10% of their grade.", a: "whose"},
+  {q: "This is the most innovative solution _____ has been proposed so far.", a: "that"},
+  {q: "The person to _____ you should send the application is the HR Manager.", a: "whom"},
+  {q: "Electric cars, _____ produce zero tailpipe emissions, are key to cleaner air.", a: "which"}
   ],
+
+
+
+
+
+
 };
 
 const dataByTopic = {
@@ -244,9 +337,19 @@ function loadContent(){
 /* ===== CHECK EXERCISE ===== */
 function checkEx(i){
   const user = document.getElementById("ex"+i).value.trim().toLowerCase();
-  const ans = exercises[currentTopic][i].a.toLowerCase();
+  const ans = exercises[currentTopic][i].a; // có thể là string hoặc array
   const box = document.getElementById("resEx"+i);
-  box.innerHTML = user===ans ? "✔ Correct" : "✘ "+ans;
+
+  if(Array.isArray(ans)){
+    const found = ans.some(a => a.toLowerCase() === user);
+    box.innerHTML = found 
+      ? '<span style="color:green;font-weight:bold;">✔ Correct</span>' 
+      : '<span style="color:red;font-weight:bold;">✘ ' + ans.join(" / ") + '</span>';
+  } else {
+    box.innerHTML = user === ans.toLowerCase() 
+      ? '<span style="color:green;font-weight:bold;">✔ Correct</span>' 
+      : '<span style="color:red;font-weight:bold;">✘ ' + ans + '</span>';
+  }
 }
 
 /* ===== LOAD VIẾT CÂU ===== */
@@ -275,7 +378,9 @@ window.checkWord = function(i){
   const user=document.getElementById("box"+i).value.trim();
   const key=item.parts[i].en; 
   const res=document.getElementById("resWord"+i);
-  res.innerHTML = user.toLowerCase()===key.toLowerCase() ? '<span class="correct">✔ Correct</span>' : `<span class="wrong">✘ ${key}</span>`;
+  res.innerHTML = user.toLowerCase()===key.toLowerCase() 
+    ? '<span style="color:green;font-weight:bold;">✔ Correct</span>' 
+    : '<span style="color:red;font-weight:bold;">✘ ' + key + '</span>';
 }
 
 /* ===== CHECK FULL SENTENCE ===== */
