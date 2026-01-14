@@ -13,8 +13,8 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  padding-bottom: 110px;
 }
+
 body {
   padding-bottom: 110px; /* hoặc tuỳ chỉnh theo ý muốn */
 }
@@ -108,7 +108,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  font-size: 24px;
+  font-size: 32px;
   margin: 0;
   white-space: nowrap;
 }
@@ -269,84 +269,44 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
   }
 }
 
-@media (max-width: 480px) {
-
-  header {
-    padding: 10px 15px;
-    flex-direction: column;
+@media(max-width:480px){
+   .header-center {
+    flex-basis: 100%;
+    order: 2;
     text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
   }
 
   .header-left {
-    width: 100%;
-    justify-content: center;
     order: 1;
   }
+}
 
+  header {
+    padding: 10px 15px;
+  }
   .header-left a {
     font-size: 18px;
   }
   .header-left a i {
     font-size: 20px;
   }
-
   .header-center {
-    position: static;
-    transform: none;
-    margin-top: 5px;
     font-size: 22px;
-    order: 2;
-    white-space: normal;
-  }
-
-  .grammar-box,
-  .drive-box,
-  .exercise,
-  .translation-exercise,
-  .sentence-box {
-    width: 95%;
-    font-size: 18px;
-  }
-
-  #vnSentence { font-size: 18px; }
-
-  #fullAnswer.full-answer-box,
-.full-answer-box {
-  width: 100%;
-  max-width: 100% !important;   /* NGĂN TRÀN NGANG  */
-  box-sizing: border-box;        /* Tính luôn border vào width */
-  font-size: 18px;
-  height: 80px;
-}
-
-  input,
-  .exercise input,
-  .translation-exercise input {
-    width: 100% !important;
-    margin-top: 5px;
-  }
-
-  .input-row {
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  button,
-  #submitBtn,
-  #changeBtn {
-    width: 100%;
-    font-size: 16px;
-    margin: 6px 0;
-  }
-
-  .signature {
-    margin-top: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-    text-align: center;
   }
 }
-</style></head>
+
+
+
+  body{margin:10px;padding:10px;}
+  .sentence-box{font-size:18px;width:90%;}
+  .full-answer-box{width:100%;font-size:16px;height:80px;}
+  button{width:140px;font-size:14px;margin-bottom:5px;}
+}
+</style>
+</head>
 
 <body>
 
