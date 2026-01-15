@@ -359,6 +359,7 @@ const grammarData = {
   "Liên từ, Adv nối": "Phần lý thuyết",
   "Rút gọn MĐ Trạng ngữ": "Phần lý thuyết",
   "Câu điều kiện": "Phần lý thuyết: If ….., we might have a situation where ….. / Without …, S may V;...",
+  "Đảo ngữ": "Phần lý thuyết: Only through/by … can S + V; Not only does SV, but S also V1 ...",
 
 
 };
@@ -371,6 +372,9 @@ const driveLinks = {
   "Liên từ, Adv nối": "https://docs.google.com/document/d/1AD02lk3BPPMm_BL2TP06ENhu_FdJWKkB/preview",
   "Rút gọn MĐ Trạng ngữ": "https://docs.google.com/document/d/1Qn0DOdEIg7eiyRnXGSHZLe3LTsxN1g_T/preview",
   "Câu điều kiện": "https://docs.google.com/document/d/1yYo8-0NOFjD6k7CQMLfqP1f0SdCs8Wg7/preview",
+  "Đảo ngữ": "https://docs.google.com/document/d/1BEg1-5emXE5JixUxvCJSN7TuBjqkUbFz/preview",
+
+
 
 };
 
@@ -425,6 +429,18 @@ const exercises = {
   {q: "The city can maintain clean air ______ it restricts heavy traffic.", a: "on the condition that"},
   {q: "Students should save their files offline ______ the server crashes.", a: "in case"},
 ],
+  "Đảo ngữ":[
+  {q: "At no time ______ (be) students allowed to enter the lab without permission.", a: "were"},
+  {q: "Not only did the policy reduce pollution, ______ it also created more green jobs.", a: "but"},
+  {q: "Only after the government introduced subsidies ______ (do) renewable energy become affordable.", a: "did"},
+  {q: "Rarely ______ (do) we see such an overwhelming public response to a new law.", a: "do"},
+  {q: "No sooner ______ (have) the meeting started than the fire alarm went off.", a: "had"},
+  {q: "______ universities provide free online courses, more working adults may gain higher qualifications.", a: "Should"},
+  {q: "Were public transport more reliable, fewer people ______ (use) private cars.", a: "would use"},
+  {q: "Had countries acted earlier, climate disasters ______ (be) so severe.", a: "would not have been"},
+  {q: "Under no circumstances should personal data ______ (sell) to private companies.", a: "be sold"},
+  {q: "Only ______ investing heavily in education can a nation secure sustainable growth.", a: "by"}
+ ],
 
 
 
@@ -876,6 +892,421 @@ const dataByTopic = {
   ],
   full: "Students should store important files in case the cloud system fails."
 }
+  ],
+
+
+  "Đảo ngữ":[
+  {
+    vn: "Chỉ bằng cách đầu tư mạnh vào giáo dục, các quốc gia mới có thể nâng cao năng suất lao động và đảm bảo sự thịnh vượng quốc gia.",
+    parts: [
+      {en: "workforce productivity", vn: "năng suất lao động", color: "green"},
+      {en: "national prosperity", vn: "thịnh vượng quốc gia", color: "purple"}
+    ],
+    full: "Only through investing in education can countries enhance workforce productivity and secure national prosperity."
+  },
+  {
+    vn: "Chỉ bằng đổi hiện đại hoá các chương trình giảng dạy, trường học mới có thể chuẩn bị học sinh cho nhu cầu lực trường lao động tương lai.",
+    parts: [
+      {en: "curricula", vn: "các chương trình giảng dạy", color: "green"},
+      {en: "future workforce", vn: "lực lượng lao động tương lai", color: "purple"}
+    ],
+    full: "Only by modernising curricula can schools prepare students for the demands of the future workforce."
+  },
+  {
+    vn: "Chỉ bằng cách áp dụng quy định chặt chẽ, chính phủ mới có thể giảm thiểu các tác động tiêu cực của công nghệ AI.",
+    parts: [
+      {en: "strict regulation", vn: "quy định chặt chẽ", color: "green"},
+      {en: "mitigate", vn: "giảm thiểu", color: "orange"}
+    ],
+    full: "Only through implementing strict regulation can governments mitigate the negative impacts of artificial intelligence."
+  },
+{
+  vn: "Chỉ bằng việc thúc đẩy giao thông xanh, các thành phố mới có thể giảm ô nhiễm không khí và tăng tính bền vững đô thị.",
+  parts: [
+    {en: "green transport", vn: "giao thông xanh", color: "green"},
+    {en: "air pollution", vn: "ô nhiễm không khí", color: "orange"},
+    {en: "urban sustainability", vn: "tính bền vững đô thị", color: "purple"}
+  ],
+  full: "Only by promoting green transport can cities effectively reduce air pollution and improve urban sustainability."
+},
+{
+  vn: "Chỉ thông qua việc hỗ trợ doanh nghiệp nhỏ, chính phủ mới có thể duy trì nền kinh tế năng động và có khả năng phục hồi.",
+  parts: [
+    {en: "small enterprises", vn: "doanh nghiệp nhỏ", color: "green"},
+    {en: "resilient", vn: "có khả năng phục hồi", color: "purple"}
+  ],
+  full: "Only through supporting small enterprises can governments sustain a dynamic and resilient economy."
+},
+{
+  vn: "Chỉ bằng cách đầu tư vào công nghệ sạch, các quốc gia đang phát triển mới có thể cạnh tranh toàn cầu và tránh sự suy thoái môi trường.",
+  parts: [
+    {en: "clean technology", vn: "công nghệ sạch", color: "green"},
+    {en: "environmental degradation", vn: "suy thoái môi trường", color: "purple"}
+  ],
+  full: "Only by investing in clean technology can developing nations compete globally while avoiding environmental degradation."
+},
+{
+  vn: "Chỉ thông qua giáo dục môi trường, xã hội mới có thể giảm rác thải.",
+  parts: [
+    {en: "environmental education", vn: "giáo dục môi trường", color: "green"}
+  ],
+  full: "Only through environmental education can societies reduce waste."
+},
+{
+  vn: "Chỉ bằng việc chuyển sang năng lượng tái tạo, chúng ta mới có thể ngăn khủng hoảng khí hậu và dựa nhiều hơn vào năng lượng sạch.",
+  parts: [
+    {en: "renewable energy", vn: "năng lượng tái tạo", color: "green"},
+    {en: "climate crisis", vn: "khủng hoảng khí hậu", color: "blue"}
+  ],
+  full: "Only by switching to renewable energy can we prevent a climate crisis and rely more on clean power."
+},
+{
+  vn: "Chỉ thông qua cải thiện phúc lợi giáo viên, chính phủ mới có thể nâng cao chất lượng giảng dạy và giữ chân nhân tài.",
+  parts: [
+    {en: "teacher welfare", vn: "phúc lợi giáo viên", color: "green"},
+    {en: "teaching quality", vn: "chất lượng giảng dạy", color: "yellow"},
+    {en: "retain talent", vn: "giữ chân nhân tài", color: "purple"}
+  ],
+  full: "Only through enhancing teacher welfare can governments improve teaching quality and retain talent."
+},
+{
+  vn: "Chỉ bằng thúc đẩy bình đẳng giới, các công ty mới có thể tận dụng tài năng đa dạng và xây dựng lực lượng lao động hòa nhập.",
+  parts: [
+    {en: "gender equality", vn: "bình đẳng giới", color: "green"},
+    {en: "leverage", vn: "tận dụng", color: "orange"},
+    {en: "inclusive workforce", vn: "lực lượng lao động hòa nhập", color: "purple"}
+  ],
+  full: "Only by promoting gender equality can companies leverage diverse talent and build an inclusive workforce."
+},
+{
+  vn: "Chỉ thông qua quy hoạch đô thị thông minh, các thành phố mới có thể tránh tắc nghẽn và tăng hiệu quả đô thị.",
+  parts: [
+    {en: "smart urban planning", vn: "quy hoạch đô thị thông minh", color: "green"},
+    {en: "congestion", vn: "tắc nghẽn", color: "blue"},
+    {en: "urban efficiency", vn: "hiệu quả đô thị", color: "purple"}
+  ],
+  full: "Only through smart urban planning can cities avoid congestion and increase urban efficiency."
+},
+{
+  vn: "Chỉ bằng trao quyền cho thanh niên, các quốc gia mới có thể đảm bảo tiến bộ lâu dài được thúc đẩy bởi sự đổi mới của giới trẻ.",
+  parts: [
+    {en: "empower", vn: "trao quyền", color: "green"},
+    {en: "long-term progress", vn: "tiến bộ lâu dài", color: "blue"}
+  ],
+  full: "Only by empowering young people can nations ensure long-term progress driven by youth innovation."
+},
+{
+  vn: "Chỉ thông qua sự đầu tư nông thôn, các quốc gia mới có thể đạt được phát triển cân bằng và thúc đẩy sự công bằng vùng miền.",
+  parts: [
+    {en: "rural investment", vn: "sự đầu tư nông thôn", color: "green"},
+    {en: "regional equity", vn: "sự công bằng vùng miền", color: "purple"}
+  ],
+  full: "Only through rural investment can nations achieve balanced development and promote regional equity."
+},
+{
+  vn: "Chỉ bằng việc chống thông tin sai lệch, xã hội mới có thể bảo vệ sự tham gia dân chủ và việc ra quyết định sáng suốt.",
+  parts: [
+    {en: "misinformation", vn: "thông tin sai lệch", color: "green"},
+    {en: "democratic participation", vn: "sự tham gia dân chủ", color: "orange"}
+  ],
+  full: "Only by combating misinformation can societies protect democratic participation and informed decision-making."
+},
+{
+  vn: "Chỉ với chính sách nhập cư hợp lý, các quốc gia già hóa dân số mới có thể duy trì lực lượng lao động và cân bằng dân số.",
+  parts: [
+    {en: "immigration policy", vn: "chính sách nhập cư", color: "green"},
+    {en: "các quốc gia già hóa dân số", vn: "ageing nations", color: "yellow"}
+  ],
+  full: "Only through a sensible immigration policy can ageing nations sustain their workforce and population balance."
+},
+{
+  vn: "Không chỉ tăng cường sức khỏe cộng đồng, thể thao còn cải thiện năng suất ở nơi làm việc.",
+  parts: [
+    {en: "public health", vn: "sức khỏe cộng đồng", color: "green"},
+    {en: "improve productivity", vn: "cải thiện năng suất", color: "yellow"}
+  ],
+  full: "Not only does sport boost public health, but it also improves productivity in the workplace."
+},
+{
+  vn: "Không chỉ giảm tắc nghẽn giao thông, phương tiện công cộng còn giảm phát thải carbon.",
+  parts: [
+    {en: "ease traffic congestion", vn: "giảm tắc nghẽn giao thông", color: "green"},
+    {en: "carbon emissions", vn: "phát thải carbon", color: "yellow"}
+  ],
+  full: "Not only does public transport ease traffic congestion, but it also lowers carbon emissions."
+},
+{
+  vn: "Không chỉ tăng tốc quá trình học tập, công nghệ còn cá nhân hóa bài giảng theo nhu cầu học sinh.",
+  parts: [
+    {en: "accelerate", vn: "tăng tốc", color: "green"},
+    {en: "personalise", vn: "cá nhân hóa", color: "yellow"}
+  ],
+  full: "Not only does technology accelerate learning, but it also personalises lessons based on students' needs."
+},
+{
+  vn: "Không chỉ tạo ra doanh thu đáng kể, du lịch còn thúc đẩy sự hiểu biết xuyên văn hóa giữa các quốc gia.",
+  parts: [
+    {en: "substantial revenue", vn: "doanh thu đáng kể", color: "green"},
+    {en: "cross-cultural understanding", vn: "sự hiểu biết xuyên văn hóa", color: "yellow"}
+  ],
+  full: "Not only does tourism generate substantial revenue, but it also boosts cross-cultural understanding."
+},
+{
+  vn: "Không chỉ tạo ra việc làm, các doanh nghiệp khởi nghiệp còn thúc đẩy đổi mới cần thiết cho năng lực cạnh tranh quốc gia.",
+  parts: [
+    {en: "start-ups", vn: "các doanh nghiệp khởi nghiệp", color: "green"},
+    {en: "drive innovation", vn: "thúc đẩy đổi mới", color: "yellow"},
+    {en: "national competitiveness", vn: "năng lực cạnh tranh quốc gia", color: "purple"}
+  ],
+  full: "Not only do start-ups create jobs, but they also drive innovation essential for national competitiveness."
+},
+{
+  vn: "Không chỉ gây hại cho sức khỏe cộng đồng, thức ăn nhanh còn làm tăng chi phí y tế lâu dài.",
+  parts: [
+    {en: "healthcare costs", vn: "chi phí y tế lâu dài", color: "green"},
+    {en: "fast food", vn: "thức ăn nhanh", color: "purple"}
+  ],
+  full: "Not only does fast food damage public health, but it also raises long-term healthcare costs."
+},
+{
+  vn: "Không chỉ cung cấp thông tin cho công chúng, mạng xã hội còn định hình quan điểm và thảo luận xã hội.",
+  parts: [
+    {en: "the public", vn: "công chúng", color: "green"},
+    {en: "shape opinions", vn: "định hình quan điểm", color: "orange"},
+    {en: "public discourse", vn: "thảo luận xã hội", color: "purple"}
+  ],
+  full: "Not only do social media platforms inform the public, but they also shape opinions and public discourse."
+},
+{
+  vn: "Không chỉ nâng cấp cơ sở hạ tầng, các dự án đầu tư công còn thúc đẩy tăng trưởng kinh tế rộng hơn.",
+  parts: [
+    {en: "upgrade infrastructure", vn: "nâng cấp cơ sở hạ tầng", color: "green"},
+    {en: "public investment projects", vn: "các dự án đầu tư công", color: "purple"}
+  ],
+  full: "Not only do public investment projects upgrade infrastructure, but they also stimulate broader economic growth."
+},
+  {
+    vn: "Không chỉ gây hại hệ sinh thái, khai thác tài nguyên mất kiểm soát còn làm tăng bất bình đẳng xã hội.",
+    parts: [
+      {en: "resource extraction", vn: "khai thác tài nguyên", color: "green"},
+      {en: "socioeconomic inequalities", vn: "bất bình đẳng xã hội", color: "yellow"}
+    ],
+    full: "Not only does uncontrolled resource extraction damage ecosystems, but it also widens socioeconomic inequalities."
+  },
+
+
+
+
+
+
+
+
+
+  {
+    vn: "Không chỉ tốn kém tài chính, chiến tranh còn phá vỡ cấu trúc xã hội.",
+    parts: [
+      {en: "Not only is war financially costly", vn: "không chỉ chiến tranh tốn kém", color: "green"},
+      {en: "destroy social fabric", vn: "phá vỡ cấu trúc xã hội", color: "orange"},
+      {en: "armed conflict", vn: "xung đột vũ trang", color: "purple"}
+    ],
+    full: "Not only is war financially costly, but it also destroys the social fabric of entire communities."
+  },
+  {
+    vn: "Không chỉ giúp xây dựng kỹ năng mềm, hoạt động ngoại khóa còn tăng sự tự tin của học sinh.",
+    parts: [
+      {en: "Not only do extracurriculars build soft skills", vn: "không chỉ hoạt động ngoại khóa phát triển kỹ năng", color: "green"},
+      {en: "boost confidence", vn: "tăng sự tự tin", color: "orange"},
+      {en: "student development", vn: "phát triển học sinh", color: "purple"}
+    ],
+    full: "Not only do extracurricular activities build soft skills, but they also boost students' confidence and self-esteem."
+  },
+  {
+    vn: "Không chỉ mang lại lợi ích cho nền kinh tế, nghiên cứu khoa học còn thúc đẩy tiến bộ xã hội.",
+    parts: [
+      {en: "Not only does scientific research fuel economies", vn: "không chỉ nghiên cứu khoa học thúc đẩy kinh tế", color: "green"},
+      {en: "drive social progress", vn: "thúc đẩy tiến bộ xã hội", color: "orange"},
+      {en: "innovation ecosystem", vn: "hệ sinh thái đổi mới", color: "purple"}
+    ],
+    full: "Not only does scientific research fuel economic development, but it also drives significant social progress."
+  },
+  {
+    vn: "Không chỉ tạo chênh lệch giàu nghèo, đô thị hóa thiếu kiểm soát còn gây suy thoái môi trường.",
+    parts: [
+      {en: "Not only does uncontrolled urbanisation worsen inequality", vn: "không chỉ đô thị hóa gây bất bình đẳng", color: "green"},
+      {en: "damage environment", vn: "tàn phá môi trường", color: "orange"},
+      {en: "urban growth", vn: "tăng trưởng đô thị", color: "purple"}
+    ],
+    full: "Not only does uncontrolled urbanisation widen income inequality, but it also accelerates environmental degradation."
+  },
+  {
+    vn: "Không chỉ làm mất bản sắc văn hóa, toàn cầu hóa còn tạo ra sự cạnh tranh không công bằng.",
+    parts: [
+      {en: "Not only does globalisation erode identity", vn: "không chỉ toàn cầu hóa làm mất bản sắc", color: "green"},
+      {en: "create unfair competition", vn: "tạo ra cạnh tranh không công bằng", color: "orange"},
+      {en: "cultural challenge", vn: "thách thức văn hóa", color: "purple"}
+    ],
+    full: "Not only does globalisation erode cultural identity, but it also creates unfair competition in international markets."
+  },
+  {
+    vn: "Hiếm khi sinh viên nhận được lời khuyên nghề nghiệp cá nhân hóa từ trường đại học.",
+    parts:[
+      {en:"Rarely do students receive",vn:"hiếm khi sinh viên nhận được",color:"green"},
+      {en:"personalised career guidance",vn:"lời khuyên nghề nghiệp cá nhân hóa",color:"orange"}
+    ],
+    full:"Rarely do students receive personalised career guidance from universities."
+  },
+  {
+    vn:"Không nơi nào giáo dục được ưu tiên như ở nhiều quốc gia Bắc Âu.",
+    parts:[
+      {en:"Nowhere is education prioritised",vn:"không nơi nào giáo dục được ưu tiên",color:"green"},
+      {en:"as strongly as",vn:"mạnh như",color:"orange"}
+    ],
+    full:"Nowhere is education prioritised as strongly as in many Nordic countries."
+  },
+  {
+    vn:"Dưới bất kỳ hoàn cảnh nào, dữ liệu cá nhân không được chia sẻ cho bên thứ ba.",
+    parts:[
+      {en:"Under no circumstances should",vn:"dưới bất kỳ hoàn cảnh nào cũng không được",color:"green"},
+      {en:"share private data",vn:"chia sẻ dữ liệu cá nhân",color:"orange"}
+    ],
+    full:"Under no circumstances should institutions share private data with third parties."
+  },
+  {
+    vn:"Không vì lý do gì chính phủ nên cắt ngân sách y tế cộng đồng.",
+    parts:[
+      {en:"For no reason should the government",vn:"không vì lý do gì chính phủ nên",color:"green"},
+      {en:"cut public healthcare budgets",vn:"cắt ngân sách y tế cộng đồng",color:"orange"}
+    ],
+    full:"For no reason should the government cut public healthcare budgets."
+  },
+  {
+    vn:"Không đời nào phát triển kinh tế được đánh đổi bằng việc phá hủy môi trường.",
+    parts:[
+      {en:"In no way should economic progress",vn:"không đời nào phát triển kinh tế",color:"green"},
+      {en:"come at the expense of the environment",vn:"đánh đổi bằng việc phá hủy môi trường",color:"orange"}
+    ],
+    full:"In no way should economic progress come at the expense of the environment."
+  },
+  {
+    vn:"Không còn là kỷ nguyên mà bằng cấp đảm bảo việc làm ổn định.",
+    parts:[
+      {en:"No longer does a degree guarantee",vn:"không còn bằng cấp đảm bảo",color:"green"},
+      {en:"stable employment",vn:"việc làm ổn định",color:"orange"}
+    ],
+    full:"No longer does a degree guarantee stable employment."
+  },
+  {
+    vn:"Chỉ sau khi nghiên cứu sâu, người ta mới hiểu được tác động của biến đổi khí hậu.",
+    parts:[
+      {en:"Only after extensive research did people realise",vn:"chỉ sau khi nghiên cứu sâu người ta mới nhận ra",color:"green"},
+      {en:"the impact of climate change",vn:"tác động của biến đổi khí hậu",color:"orange"}
+    ],
+    full:"Only after extensive research did people realise the impact of climate change."
+  },
+  {
+    vn:"Chỉ bằng cách hợp tác, các quốc gia mới có thể giải quyết nghèo đói toàn cầu.",
+    parts:[
+      {en:"Only by collaborating can nations",vn:"chỉ bằng cách hợp tác các quốc gia mới có thể",color:"green"},
+      {en:"tackle global poverty",vn:"giải quyết nghèo đói toàn cầu",color:"orange"}
+    ],
+    full:"Only by collaborating can nations tackle global poverty."
+  },
+  {
+    vn:"Chỉ khi công nghệ được sử dụng có đạo đức, xã hội mới hưởng lợi hoàn toàn.",
+    parts:[
+      {en:"Only when technology is used ethically can society",vn:"chỉ khi công nghệ dùng có đạo đức xã hội mới có thể",color:"green"},
+      {en:"benefit fully",vn:"hưởng lợi hoàn toàn",color:"orange"}
+    ],
+    full:"Only when technology is used ethically can society benefit fully."
+  },
+  {
+    vn:"Chỉ với sự hỗ trợ của chính phủ, các doanh nghiệp nhỏ mới tồn tại.",
+    parts:[
+      {en:"Only with governmental support can small businesses",vn:"chỉ với hỗ trợ chính phủ doanh nghiệp nhỏ mới có thể",color:"green"},
+      {en:"survive economic upheaval",vn:"tồn tại qua biến động kinh tế",color:"orange"}
+    ],
+    full:"Only with governmental support can small businesses survive economic upheaval."
+  },
+  {
+    vn:"Hiếm khi công nghệ phát triển nhanh như trong hai thập kỷ qua.",
+    parts:[
+      {en:"Seldom has technology advanced",vn:"hiếm khi công nghệ phát triển",color:"green"},
+      {en:"so rapidly",vn:"nhanh đến vậy",color:"orange"}
+    ],
+    full:"Seldom has technology advanced so rapidly as in the last two decades."
+  },
+  {
+    vn:"Người ta vừa mới thực thi luật giao thông thì số tai nạn đã giảm.",
+    parts:[
+      {en:"Scarcely had the law been enforced",vn:"vừa mới thực thi luật",color:"green"},
+      {en:"when the number of accidents fell",vn:"thì số tai nạn giảm",color:"orange"}
+    ],
+    full:"Scarcely had the law been enforced when the number of accidents fell."
+  },
+  {
+    vn:"Ngay khi cải cách giáo dục bắt đầu, chất lượng giảng dạy đã được cải thiện.",
+    parts:[
+      {en:"No sooner had reforms begun",vn:"ngay khi cải cách bắt đầu",color:"green"},
+      {en:"than teaching quality improved",vn:"thì chất lượng giảng dạy cải thiện",color:"orange"}
+    ],
+    full:"No sooner had educational reforms begun than teaching quality improved."
+  },
+  {
+    vn:"Không những trường đại học đang tăng học phí, mà còn giảm học bổng.",
+    parts:[
+      {en:"Not only are universities raising tuition fees",vn:"không những trường tăng học phí",color:"green"},
+      {en:"but they are also reducing scholarships",vn:"mà còn giảm học bổng",color:"orange"}
+    ],
+    full:"Not only are universities raising tuition fees, but they are also reducing scholarships."
+  },
+  {
+    vn:"Không những các thành phố mở rộng không gian xanh, mà còn khuyến khích người dân bảo vệ môi trường.",
+    parts:[
+      {en:"Not only are cities expanding green spaces",vn:"không những thành phố mở rộng mảng xanh",color:"green"},
+      {en:"but they are encouraging environmental protection",vn:"mà còn khuyến khích bảo vệ môi trường",color:"orange"}
+    ],
+    full:"Not only are cities expanding green spaces, but they are also encouraging environmental protection among residents."
+  },
+  {
+    vn:"Khó mà có ai phủ nhận lợi ích của giáo dục bậc cao trong xã hội hiện đại.",
+    parts:[
+      {en:"Hardly can anyone deny",vn:"khó ai có thể phủ nhận",color:"green"},
+      {en:"the value of higher education",vn:"giá trị của giáo dục đại học",color:"orange"}
+    ],
+    full:"Hardly can anyone deny the value of higher education in modern society."
+  },
+  {
+    vn:"Không bao giờ các quốc gia phát triển nên làm ngơ trước trách nhiệm hỗ trợ thế giới.",
+    parts:[
+      {en:"Never should developed nations ignore",vn:"không bao giờ các quốc gia phát triển nên làm ngơ",color:"green"},
+      {en:"their global responsibilities",vn:"trách nhiệm toàn cầu",color:"orange"}
+    ],
+    full:"Never should developed nations ignore their global responsibilities."
+  },
+  {
+    vn:"Ít ai nhận ra rằng lựa chọn thực phẩm cá nhân có thể ảnh hưởng đến môi trường.",
+    parts:[
+      {en:"Little do people realise",vn:"ít ai nhận ra",color:"green"},
+      {en:"their food choices affect the environment",vn:"lựa chọn thực phẩm ảnh hưởng môi trường",color:"orange"}
+    ],
+    full:"Little do people realise the extent to which their food choices affect the environment."
+  },
+  {
+    vn:"Không phải lúc nào công nghệ cũng được sử dụng theo đúng mục đích.",
+    parts:[
+      {en:"Not always is technology used",vn:"không phải lúc nào công nghệ cũng được dùng",color:"green"},
+      {en:"for the right purposes",vn:"đúng mục đích",color:"orange"}
+    ],
+    full:"Not always is technology used for the right purposes."
+  },
+  {
+    vn:"Không một chính sách đơn lẻ nào có thể giải quyết hoàn toàn bất bình đẳng xã hội.",
+    parts:[
+      {en:"By no means can a single policy",vn:"hoàn toàn không một chính sách duy nhất",color:"green"},
+      {en:"eliminate social inequality",vn:"xóa bỏ bất bình đẳng xã hội",color:"orange"}
+    ],
+    full:"By no means can a single policy eliminate social inequality."
+  }
   ],
 
 
