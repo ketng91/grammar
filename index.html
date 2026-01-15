@@ -342,6 +342,47 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
   .full-answer-box{width:100%;font-size:16px;height:80px;}
   button{width:140px;font-size:14px;margin-bottom:5px;}
 }
+
+
+/* ===== FIX LỖI RÊ TRÁI–PHẢI, THU GỌN PAGE ===== */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;   /* chặn tràn ngang */
+}
+
+/* Mobile tối ưu */
+@media(max-width:480px){
+
+  body {
+    transform: scale(0.96);     /* thu nhỏ nhẹ toàn trang */
+    transform-origin: top left; /* giữ điểm thu từ góc trái */
+  }
+
+  .grammar-box,
+  .drive-box,
+  .exercise,
+  .translation-exercise,
+  .sentence-box {
+    width: 95%;   /* đảm bảo fit màn */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-row {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .input-row input {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
 </style>
 </head>
 
