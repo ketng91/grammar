@@ -236,7 +236,7 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
   font-weight: bold;
   color: #004aad;
   text-align: right;        /* vẫn phải căn phải */
-  margin-top: -25px;
+  margin-top: 30px;
   margin-right: 50px;       /* dịch vào trái 50px */
 }
 
@@ -358,6 +358,7 @@ const grammarData = {
   "MĐQH": "Phần lý thuyết",
   "Liên từ, Adv nối": "Phần lý thuyết",
   "Rút gọn MĐ Trạng ngữ": "Phần lý thuyết",
+  "Câu điều kiện": "Phần lý thuyết",
 
 
 };
@@ -369,13 +370,9 @@ const driveLinks = {
   "MĐQH": "https://docs.google.com/document/d/1c3aJf7_Gioxha_NpwOJW5d8Crfo07V5y/preview",
   "Liên từ, Adv nối": "https://docs.google.com/document/d/1AD02lk3BPPMm_BL2TP06ENhu_FdJWKkB/preview",
   "Rút gọn MĐ Trạng ngữ": "https://docs.google.com/document/d/1Qn0DOdEIg7eiyRnXGSHZLe3LTsxN1g_T/preview",
+  "Câu điều kiện": "https://docs.google.com/document/d/1yYo8-0NOFjD6k7CQMLfqP1f0SdCs8Wg7/preview",
 
 };
-
-
-
-
-
 
 const exercises = {
   "MĐQH":[
@@ -414,6 +411,20 @@ const exercises = {
   {q: "Once ______ (introduce) to the public, the government's new education policy sparked intense debate.", a: "introduced"},
   {q: "______ (Understand) the potential risks involved, the team took extra precautions during the trial.", a: "Understanding"},
  ],
+    "Câu điều kiện":[
+    {q: "If countries reduce emissions, global warming ______ (slow down).", a: "will slow down"},
+  {q: "If public transport were more reliable, fewer people ______ (drive) private cars.", a: "would drive"},
+  {q: "If governments had offered better subsidies, more households ______ (install) solar panels.", a: "would have installed"},
+  {q: "Environmental damage would be far worse if nations ______ (not cooperate).", a: "did not cooperate"},
+  {q: "If students ______ (not have) online access during lockdown, education would have been disrupted.", a: "had not had"},
+  {q: "If companies ______ (prioritise) employee well-being, productivity will increase.", a: "prioritise"},
+  {q: "University education becomes affordable provided that more scholarships ______ (grant).", a: "are granted"},
+  {q: "Children may lack social interaction ______ they join group activities.", a: "unless"},
+  {q: "Public health will improve ______ the government invests more in hospitals.", a: "as long as"},
+  {q: "Crime will decrease ______ communities work together with the police.", a: "only if"},
+  {q: "The city can maintain clean air ______ it restricts heavy traffic.", a: "on the condition that"},
+  {q: "Students should save their files offline ______ the server crashes.", a: "in case"},
+],
 
 
 
@@ -428,7 +439,7 @@ const dataByTopic = {
     vn: "Học sinh du học thường phát triển tính tự lập và khả năng thích nghi cao hơn.",
     parts: [
       {en: "study abroad", vn: "du học", color: "green"},
-      {en: "independence", vn: "tính tự lập", color: "orange"},
+      {en: "independence", vn: "tính tự lập", color: "yellow"},
       {en: "adaptability", vn: "khả năng thích nghi", color: "purple"}
     ],
     full: "Students studying abroad often develop greater independence and adaptability."
@@ -447,7 +458,7 @@ const dataByTopic = {
     parts: [
       {en: "evolving", vn: "đang phát triển", color: "green"},
       {en: "rapid pace", vn: "tốc độ nhanh", color: "blue"},
-      {en: "transform", vn: "thay đổi hoàn toàn", color: "orange"},
+      {en: "transform", vn: "thay đổi hoàn toàn", color: "yellow"},
     ],
     full: "Technology, evolving at a rapid pace, has transformed the way we communicate."
   },
@@ -455,7 +466,7 @@ const dataByTopic = {
     vn: "Các công ty cung cấp giờ làm việc linh hoạt có thể cải thiện sự hài lòng của nhân viên.",
     parts: [
       {en: "working hours", vn: "giờ làm việc", color: "green"},
-      {en: "employee satisfaction", vn: "sự hài lòng của nhân viên", color: "orange"}
+      {en: "employee satisfaction", vn: "sự hài lòng của nhân viên", color: "yellow"}
     ],
     full: "Companies providing flexible working hours can improve employee satisfaction."
   },
@@ -464,7 +475,7 @@ const dataByTopic = {
     parts: [
       {en: "face", vn: "đối mặt", color: "green"},
       {en: "increasing pressure", vn: "áp lực ngày càng tăng", color: "blue"},
-      {en: "mental health", vn: "sức khỏe tâm thần", color: "orange"},
+      {en: "mental health", vn: "sức khỏe tâm thần", color: "yellow"},
     ],
     full: "Students, facing increasing pressure from exams, need better mental health support."
   },
@@ -474,7 +485,7 @@ const dataByTopic = {
   {
     vn: "Trong khi nhiều quốc gia đầu tư mạnh vào năng lượng tái tạo, các nước khác vẫn dựa vào nhiên liệu hóa thạch.",
     parts: [
-      {en: "renewable energy", vn: "năng lượng tái tạo", color: "orange"},
+      {en: "renewable energy", vn: "năng lượng tái tạo", color: "yellow"},
       {en: "fossil fuels", vn: "nhiên liệu hóa thạch", color: "purple"}
     ],
     full: "While many countries invest heavily in renewable energy, others still rely on fossil fuels."
@@ -483,14 +494,14 @@ const dataByTopic = {
     vn: "Một số học sinh thích học tập trực tuyến, ngược lại, những học sinh khác thích các lớp học trực tiếp.",
     parts: [
       {en: "online learning", vn: "học tập trực tuyến", color: "blue"},
-      {en: "face-to-face classes", vn: "các lớp trực tiếp", color: "orange"}
+      {en: "face-to-face classes", vn: "các lớp trực tiếp", color: "yellow"}
     ],
     full: "Some students prefer online learning, whereas others enjoy face-to-face classes."
   },
   {
     vn: "Vì chính phủ đã tăng ngân sách cho y tế công cộng, kết quả sức khỏe của người dân đã được cải thiện.",
     parts: [
-      {en: "public healthcare", vn: "y tế công cộng", color: "orange"},
+      {en: "public healthcare", vn: "y tế công cộng", color: "yellow"},
       {en: "health outcomes", vn: "kết quả sức khỏe", color: "purple"}
     ],
     full: "Since governments have increased funding for public healthcare, citizens’ health outcomes have improved."
@@ -499,7 +510,7 @@ const dataByTopic = {
     vn: "Mặc dù công nghệ đã làm cho việc giao tiếp trở nên dễ dàng hơn, nhưng nó cũng gây ra những lo ngại về quyền riêng tư.",
     parts: [
       {en: "simplify", vn: "làm cho đơn giản hơn", color: "blue"},
-      {en: "privacy concerns", vn: "lo ngại quyền riêng tư", color: "orange"}
+      {en: "privacy concerns", vn: "lo ngại quyền riêng tư", color: "yellow"}
     ],
     full: "Although technology has simplified communication, it has also caused privacy concerns."
   },
@@ -516,7 +527,7 @@ const dataByTopic = {
     vn: "Nhiều quốc gia phải đối mặt với những thách thức kinh tế; tuy nhiên, họ vẫn tiếp tục đầu tư vào giáo dục.",
     parts: [
       {en: "economic challenges", vn: "những thách thức kinh tế", color: "blue"},
-      {en: "invest in", vn: "đầu tư vào", color: "orange"}
+      {en: "invest in", vn: "đầu tư vào", color: "yellow"}
     ],
     full: "Many countries face economic challenges; nevertheless, they continue to invest in education."
   },
@@ -524,7 +535,7 @@ const dataByTopic = {
     vn: "Chính phủ đã giảm thuế đối với năng lượng tái tạo; do đó, nhiều hộ gia đình có thể mua các tấm pin mặt trời.",
     parts: [
       {en: "renewable energy", vn: "năng lượng tái tạo", color: "blue"},
-      {en: "solar panels", vn: "các tấm pin mặt trời", color: "orange"}
+      {en: "solar panels", vn: "các tấm pin mặt trời", color: "yellow"}
     ],
     full: "The government has reduced taxes on renewable energy; therefore, more households can afford solar panels."
   },
@@ -539,7 +550,7 @@ const dataByTopic = {
     vn: "Giao thông công cộng tiện lợi; hơn nữa, nó giúp giảm tắc nghẽn giao thông và ô nhiễm.",
     parts: [
       {en: "Public transportation", vn: "Giao thông công cộng", color: "blue"},
-      {en: "traffic congestion", vn: "tắc nghẽn giao thông", color: "orange"}
+      {en: "traffic congestion", vn: "tắc nghẽn giao thông", color: "yellow"}
     ],
     full: "Public transportation is convenient; moreover, it reduces traffic congestion and pollution."
   },
@@ -556,14 +567,14 @@ const dataByTopic = {
   {
     vn: "Sau khi hoàn thành khảo sát, học sinh phân tích kết quả.",
     parts: [
-      {en: "analyse", vn: "phân tích", color: "orange"},
+      {en: "analyse", vn: "phân tích", color: "yellow"},
     ],
     full: "Having completed the survey, students analyzed the results."
   },
   {
     vn: "Tăng ngân sách, chính phủ đã cải thiện hệ thống y tế công cộng.",
     parts: [
-      {en: "public healthcare", vn: "y tế công cộng", color: "orange"}
+      {en: "public healthcare", vn: "y tế công cộng", color: "yellow"}
     ],
     full: "Increasing funding, the government has improved public healthcare."
   },
@@ -578,7 +589,7 @@ const dataByTopic = {
     vn: "Đã tiến hành nghiên cứu kỹ lưỡng, công ty triển khai chương trình.",
     parts: [
       {en: "extensive research", vn: "nghiên cứu kỹ lưỡng", color: "blue"},
-      {en: "launch", vn: "triển khai/ra mắt", color: "orange"}
+      {en: "launch", vn: "triển khai/ra mắt", color: "yellow"}
     ],
     full: "Having conducted extensive research, the company launched the program."
   },
@@ -586,7 +597,7 @@ const dataByTopic = {
     vn: "Tham gia hội thảo, học sinh học được các kỹ năng giải quyết vấn đề mới.",
     parts: [
       {en: "workshop", vn: "hội thảo", color: "blue"},
-      {en: "problem-solving", vn: "giải quyết vấn đề", color: "orange"},
+      {en: "problem-solving", vn: "giải quyết vấn đề", color: "yellow"},
     ],
     full: "Attending the workshop, students learned new problem-solving skills."
   },
@@ -601,7 +612,7 @@ const dataByTopic = {
   {
     vn: "Sau khi xem xét các báo cáo, các nhà nghiên cứu công bố kết quả nghiên cứu.",
     parts: [
-      {en: "publish", vn: "công bố", color: "orange"},
+      {en: "publish", vn: "công bố", color: "yellow"},
       {en: "findings", vn: "kết quả nghiên cứu", color: "purple"}
     ],
     full: "Having reviewed the reports, researchers published their findings."
@@ -630,6 +641,166 @@ const dataByTopic = {
     full: "Adopting new technologies, companies increased productivity."
   },
 ],
+  "Câu điều kiện":[
+{
+  vn: "Nếu các trường đầu tư vào công nghệ, học sinh sẽ có trải nghiệm học tập thú vị và hiệu quả hơn.",
+  parts: [
+    {en: "learning experience", vn: "trải nghiệm thú vị", color: "green"},
+  ],
+  full: "If schools invest in technology, students will have a more engaging and effective learning experience."
+},
+{
+  vn: "Nếu chính phủ đánh thuế nặng vào nhiên liệu hóa thạch, lượng khí thải carbon sẽ giảm đáng kể.",
+  parts: [
+    {en: "fossil fuels", vn: "nhiên liệu hóa thạch", color: "green"},
+    {en: "impose heavy taxes", vn: "đánh thuế nặng", color: "yellow"},
+    {en: "carbon emissions", vn: "lượng khí thải carbon", color: "purple"}
+  ],
+  full: "If governments impose heavy taxes on fossil fuels, carbon emissions will decline dramatically."
+},
+{
+  vn: "Nếu người trẻ được hướng nghiệp sớm, họ sẽ chọn ngành nghề phù hợp hơn với năng lực cá nhân.",
+  parts: [
+    {en: "career guidance", vn: "hướng nghiệp", color: "green"},
+    {en: "personal aptitude", vn: "năng lực cá nhân", color: "purple"}
+  ],
+  full: "If young people receive early career guidance, they will choose careers that better align with their personal aptitude."
+},
+{
+  vn: "Nếu không có Internet, sinh viên sẽ gặp khó khăn nghiêm trọng trong việc tiếp cận tài liệu học tập.",
+  parts: [
+    {en: "study materials", vn: "tiếp cận tài liệu học tập", color: "yellow"},
+  ],
+  full: "Without the Internet, students would face serious difficulties in accessing study materials."
+},
+{
+  vn: "Nếu hạ tầng giao thông được cải thiện, người dân sẽ không phải mất nhiều thời gian đi lại mỗi ngày.",
+  parts: [
+    {en: "transport infrastructure", vn: "hạ tầng giao thông", color: "green"},
+    {en: "commute", vn: "đi lại", color: "yellow"},
+  ],
+  full: "If the transport infrastructure were improved, people would not have to spend excessive time commuting every day."
+},
+{
+  vn: "Nếu các chính sách bảo tồn không được thực hiện, nhiều loài động vật có nguy cơ tuyệt chủng cuối cùng sẽ biến mất hoàn toàn.",
+  parts: [
+    {en: "conservation policies", vn: "chính sách bảo tồn", color: "green"},
+    {en: "endangered species", vn: "loài có nguy cơ tuyệt chủng", color: "yellow"},
+    {en: "die out", vn: "biến mất", color: "purple"}
+  ],
+  full: "If conservation policies are not implemented, many endangered species will eventually die out."
+},
+{
+  vn: "Nếu nhiều người đọc sách nhiều từ nhỏ, dân số sẽ có trình độ học vấn cao hơn trong tương lai.",
+  parts: [
+    {en: "educational level", vn: "trình độ học vấn", color: "yellow"},
+  ],
+  full: "If more people read extensively from a young age, the population will attain a higher educational level in the future."
+},
+{
+  vn: "Nếu các công ty ưu tiên phúc lợi nhân viên, năng suất làm việc sẽ tăng lên đáng kể.",
+  parts: [
+    {en: "employee welfare", vn: "phúc lợi nhân viên", color: "green"},
+    {en: "prioritise", vn: "ưu tiên", color: "yellow"},
+    {en: "work productivity", vn: "năng suất làm việc", color: "purple"}
+  ],
+  full: "If companies prioritise employee welfare, work productivity will rise significantly."
+},
+{
+  vn: "Nếu mọi người tái chế thường xuyên, lượng rác thải chôn lấp sẽ giảm mạnh.",
+  parts: [
+    {en: "recycle", vn: "tái chế", color: "green"},
+    {en: "landfill waste", vn: "rác thải chôn lấp", color: "yellow"},
+  ],
+  full: "If people recycle regularly, landfill waste will decline sharply."
+},
+{
+  vn: "Nếu người lao động không được sự đào tạo lại, họ sẽ vật lộn để giữ sức cạnh tranh trên thị trường việc làm tương lai.",
+  parts: [
+    {en: "retraining", vn: "sự đào tạo lại", color: "green"},
+    {en: "job market", vn: "thị trường việc làm", color: "yellow"},
+    {en: "remain competitive", vn: "giữ sức cạnh tranh", color: "purple"}
+  ],
+  full: "If workers fail to receive retraining, they will struggle to remain competitive in the future job market."
+},
+{
+  vn: "Nếu không có giao thông công cộng, các thành phố lớn sẽ gánh chịu tình trạng tắc nghẽn giao thông trầm trọng.",
+  parts: [
+    {en: "public transport", vn: "giao thông công cộng", color: "green"},
+    {en: "traffic congestion", vn: "tắc nghẽn giao thông", color: "yellow"},
+  ],
+  full: "Without public transport, major cities would suffer from severe traffic congestion."
+},
+{
+  vn: "Nếu không có sự hợp tác quốc tế, biến đổi khí hậu sẽ trở nên khó kiểm soát hơn rất nhiều.",
+  parts: [
+    {en: "international cooperation", vn: "hợp tác quốc tế", color: "green"},
+    {en: "climate change", vn: "biến đổi khí hậu", color: "yellow"},
+  ],
+  full: "Without international cooperation, climate change would become far more difficult to control."
+},
+{
+  vn: "Nếu các quốc gia đã đầu tư mạnh vào năng lượng tái tạo sớm hơn, mức độ ô nhiễm hiện tại đã không nghiêm trọng đến vậy.",
+  parts: [
+    {en: "renewable energy", vn: "năng lượng tái tạo", color: "green"},
+    {en: "pollution levels", vn: "mức độ ô nhiễm", color: "yellow"},
+  ],
+  full: "If countries had invested heavily in renewable energy earlier, current pollution levels would not be so severe."
+},
+{
+  vn: "Trẻ em sẽ khó phát triển kỹ năng xã hội trừ khi chúng tham gia các hoạt động ngoại khóa.",
+  parts: [
+    {en: "unless", vn: "trừ khi", color: "green"},
+    {en: "social skills", vn: "kỹ năng xã hội", color: "yellow"},
+    {en: "extracurricular activities", vn: "hoạt động ngoại khóa", color: "purple"}
+  ],
+  full: "Children will struggle to develop social skills unless they participate in extracurricular activities."
+},
+{
+  vn: "Các thành phố sẽ duy trì môi trường sống lành mạnh miễn là họ ưu tiên không gian xanh.",
+  parts: [
+    {en: "as long as", vn: "miễn là", color: "green"},
+    {en: "prioritise", vn: "ưu tiên", color: "yellow"},
+    {en: "không gian xanh", vn: "green spaces", color: "purple"}
+  ],
+  full: "Cities will maintain a healthy living environment as long as they prioritise green spaces."
+},
+{
+  vn: "Giáo dục đại học sẽ dễ tiếp cận hơn miễn là chính phủ cung cấp học bổng và sự hỗ trợ tài chính.",
+  parts: [
+    {en: "provided that", vn: "miễn là / với điều kiện là", color: "green"},
+    {en: "Higher education", vn: "Giáo dục đại học", color: "yellow"},
+    {en: "financial aid", vn: "sự hỗ trợ tài chính", color: "purple"}
+  ],
+  full: "Higher education will become more accessible provided that governments offer scholarships and financial aid."
+},
+{
+  vn: "Tỷ lệ thất nghiệp sẽ giảm chỉ khi doanh nghiệp tạo ra nhiều cơ hội đào tạo cho người lao động.",
+  parts: [
+    {en: "only if", vn: "chỉ khi", color: "green"},
+    {en: "training opportunities", vn: "cơ hội đào tạo", color: "yellow"},
+    {en: "Unemployment rates", vn: "Tỷ lệ thất nghiệp", color: "purple"}
+  ],
+  full: "Unemployment rates will fall only if businesses create more training opportunities for workers."
+},
+{
+  vn: "Các cộng đồng có thể ngăn chặn tội phạm với điều kiện họ đầu tư vào hệ thống an ninh và giáo dục công dân.",
+  parts: [
+    {en: "on the condition that", vn: "với điều kiện là", color: "green"},
+    {en: "security systems", vn: "hệ thống an ninh", color: "yellow"},
+    {en: "civic education", vn: "giáo dục công dân", color: "purple"}
+  ],
+  full: "Communities can prevent crime on the condition that they invest in security systems and civic education."
+},
+{
+  vn: "Sinh viên nên lưu tài liệu quan trọng trong trường hợp hệ thống đám mây bị lỗi.",
+  parts: [
+   {en: "in case", vn: "trong trường hợp", color: "green"},
+   {en: "cloud system", vn: "hệ thống đám mây bị lỗi", color: "orange"},
+  ],
+  full: "Students should store important files in case the cloud system fails."
+}
+  ],
 
 
 };
