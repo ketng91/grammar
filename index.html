@@ -270,6 +270,33 @@ button:hover, button:active { background-color: #ffb3ba; transform: translateY(-
   }
 }
 
+/* ========== FIX PREVIEW GOOGLE DRIVE TRÊN MOBILE ========== */
+@media(max-width:480px){
+
+  .drive-box {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .drive-box iframe {
+    width: 100%;
+    height: 350px;   /* thu chiều cao lại cho vừa màn */
+    transform: scale(0.9);   /* thu nhỏ nội dung */
+    transform-origin: top left;
+  }
+
+  /* Giảm size chữ trong preview (nếu file là docs/slides/pdf embed) */
+  iframe * {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+  }
+}
+
+
+
+
+
 @media(max-width:480px){
    .header-center {
     flex-basis: 100%;
